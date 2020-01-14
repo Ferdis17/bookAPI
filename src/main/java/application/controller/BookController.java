@@ -49,7 +49,7 @@ public class BookController {
         Book book = bookRepository.findById(bookId).orElseThrow(() -> new BookNotFoundException("Book", "id", bookId));
 
         bookRepository.delete(book);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("Book with id "+bookId+" has been deleted successfully.");
     }
 
 
